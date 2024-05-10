@@ -1,6 +1,6 @@
-CREATE USER 'foo'@'%' IDENTIFIED WITH mysql_native_password BY 'bar';
+CREATE USER 'singschool'@'%' IDENTIFIED WITH mysql_native_password BY 'college';
 
-grant all privileges on *.* to 'foo'@'%';
+grant all privileges on *.* to 'singschool'@'%';
 
 FLUSH PRIVILEGES;
 

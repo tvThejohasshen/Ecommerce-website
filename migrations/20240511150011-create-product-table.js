@@ -8,53 +8,55 @@ var seed;
   * We receive the dbmigrate dependency from dbmigrate initially.
   * This enables us to not have to rely on NODE_PATH.
   */
-exports.setup = function(options, seedLink) {
+exports.setup = function (options, seedLink) {
   dbm = options.dbmigrate;
   type = dbm.dataType;
   seed = seedLink;
 };
 
-exports.up = function(db) {
+// the `up` function contains the changes that we want to make
+// to the database
+exports.up = function (db) {
   /*
-  CREATE TABLE products (
-    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
-    cost INT,
-    DESCRIPTION TEXT
-
-  )engine = innodb;
+    CREATE TABLE products (
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+      name VARCHAR(100) NOT NULL
+      cost INT,
+      DESCRIPTION TEXT
+    ) engine = innodb;
   */
-  
-  // first argument : the name of the table
-  // second argument : object that defines the columns of the table
+
+  // first argument: the name of the table
+  // second arugment: object that defines the columns of the table
   // (each key is one column)
   return db.createTable('products', {
-    'id':{
+    'id': {
       'type':'int',
       'primaryKey': true,
       'autoIncrement': true,
-      'unsigned' : true
+      'unsigned': true
     },
-    'name':{
+    'name': {
       'type':'string',
       'length': 100,
       'notNull': true
     },
     'cost': {
       'type':'int',
-      'unsigned':true
+      'unsigned': true
     },
     'description':{
-      'type':'text',
+      'type': 'text',
       'notNull': true
-   }
+    }
   })
-  };
+};
 
-exports.down = function(db) {
+// the `down` function reverts changes done to the database
+exports.down = function (db) {
   return db.dropTable('products');
 };
- 
+
 exports._meta = {
   "version": 1
 };

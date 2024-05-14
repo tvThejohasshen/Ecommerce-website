@@ -4,7 +4,7 @@ const router = express.Router();
 // require in the model
 const { Product, Category, Tag } = require('../models');
 const { createProductForm, bootstrapField, createSearchForm } = require('../forms');
-const dataLayer = require('../routes/products')
+const dataLayer = require('../dal/products')
 
 router.get('/', async function (req, res) {
 

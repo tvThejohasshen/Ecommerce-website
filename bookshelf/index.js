@@ -7,7 +7,7 @@ const knex = require('knex')(
         //client refers to what database technology we are using 
         client: 'mysql',
         connection :{
-            user:'school',
+            user:'singschool',
             password:'college',
             database:'singschool',
             host: '127.0.0.1'   // aka 'local host'

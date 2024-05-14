@@ -16,9 +16,8 @@ exports.setup = function(options, seedLink) {
 
 exports.up = async function(db) {
   await db.insert('tags', ['name'], ['English']);
-  await db.insert('tags', ['name'], ['science']);
-  await db.insert('tags', ['name'], ['Mathematics']);
-  await db.insert('tags', ['name'], ['Drawing']);
+  await db.insert('tags', ['name'], ['chinese']);
+
 };
 
 exports.down = function(db) {

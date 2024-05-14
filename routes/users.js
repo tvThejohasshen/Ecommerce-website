@@ -80,14 +80,14 @@ router.post('/login', function (req, res) {
                     req.flash('success_messages', `Welcome back ${user.get('username')}`);
                     res.redirect('/products')
                 } else {
-                    req.flash('error_messages', "Invalid authentication");
+                    req.flash('error_messages', "Invalid authentication1");
                     res.status(401);
                     res.redirect("/users/login");
                 }
 
 
             } else {
-                req.flash('error_messages', "Invalid authentication");
+                req.flash('error_messages', "Invalid authentication2");
                 res.status(401);
                 res.redirect('/users/login');
             }

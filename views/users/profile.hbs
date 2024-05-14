@@ -6,6 +6,8 @@
     <li>ID: {{user.id}}</li>
     <li>Email: {{user.email}}</li>
 </ul>
+ {{!-- CSRF token --}}
+    <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
 {{/block}}
 
 {{/extends}}
